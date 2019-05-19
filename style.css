@@ -20,8 +20,16 @@ header{
     width: 90%;
     margin: 0 auto;
 
+    /* para nagevadores mais antigos funcionar o flex */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     /* transforma os filhos flexiveis */
     display: flex;
+
+    /* para funcionar em navegadores mais antigos */
+    -webkit-flex-flow: row wrap;
     /* faz com que quebre pra linha de baixo caso não caiba no container (versão condensada de flex-direction e flex-wrap)*/
     flex-flow: row wrap;
 }
@@ -43,4 +51,12 @@ header{
 
 .card a {
     margin-bottom: 10px;
+}
+
+/* quando chegar a largura maxima de 727px, coloca a largura do card em 100% da largura do container, e modifica a margin de top e bottom para 15px e left e right para 0 */
+@media (max-width: 727px){
+    .card {
+        flex-basis: 100%;
+        margin: 15px 0;
+    }
 }
