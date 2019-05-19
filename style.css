@@ -19,9 +19,28 @@ header{
 .container{
     width: 90%;
     margin: 0 auto;
+
+    /* transforma os filhos flexiveis */
+    display: flex;
+    /* faz com que quebre pra linha de baixo caso não caiba no container (versão condensada de flex-direction e flex-wrap)*/
+    flex-flow: row wrap;
 }
 
 .card{
     border: 1px solid #86a5ba;
     margin: 15px;
+
+    display: flex;
+    flex-flow: column wrap;
+    flex-basis: 45%;
+}
+
+/* alinha depois da div superior ao card */
+.card div {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.card a {
+    margin-bottom: 10px;
 }
